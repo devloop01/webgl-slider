@@ -36,7 +36,7 @@ preloadImages(document.querySelectorAll(".slider__image")).then(() => {
 			stagger: 0.1,
 		})
 		.to(".text__row .text", {
-			duration: 3,
+			duration: 2,
 			translateY: (i) => 100 + i * 25 + "%",
 			ease: "expo.in",
 			stagger: 0.25,
