@@ -6,6 +6,12 @@
 	--cursor-stroke: #5631e9;
 	--cursor-fill: transparent;
 	--cursor-stroke-width: 1px;
+
+	--base-image-width: 450px;
+	--base-image-height: 600px;
+
+	--image-width: 450px;
+	--image-height: 600px;
 }
 
 * {
@@ -56,8 +62,8 @@ a {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 450px;
-	height: 600px;
+	width: var(--image-width);
+	height: var(--image-height);
 	transform: translate(-50%, -50%);
 	overflow: hidden;
 	z-index: 1;
@@ -79,8 +85,8 @@ a {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 450px;
-	height: 600px;
+	width: var(--image-width);
+	height: var(--image-height);
 	transform: translate(-50%, -50%);
 	z-index: 2;
 	.slider__silde-info {
@@ -286,7 +292,7 @@ a {
 				opacity: 1;
 			}
 			to {
-				opacity: 0.8;
+				opacity: 0.6;
 			}
 		}
 	}
@@ -375,6 +381,68 @@ a {
 			stroke-linejoin: round;
 			stroke-width: 32px;
 			mix-blend-mode: difference;
+		}
+	}
+}
+
+// some dumb media queries - IDK not the best css I have written here
+
+@media only screen and (max-width: 64em) {
+	.slider__slide-info--wrapper {
+		.slider__silde-info {
+			.slide__text--title {
+				transform: translateX(-80%);
+			}
+			.slide__text--description {
+				opacity: 0;
+				height: 0;
+			}
+		}
+	}
+
+	.frame {
+		&__credits {
+			display: none;
+		}
+	}
+}
+
+@media only screen and (max-width: 53em) {
+	:root {
+		--image-width: calc(var(--base-image-width) / 1.125);
+		--image-height: calc(var(--base-image-height) / 1.125);
+	}
+
+	.slider__slide-info--wrapper {
+		.slider__silde-info {
+			.slide__index {
+				transform: translate(-60%, 0%);
+				font-size: 10rem;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 32em) {
+	:root {
+		--image-width: calc(var(--base-image-width) / 1.5);
+		--image-height: calc(var(--base-image-height) / 1.5);
+	}
+	.slider__slide-info--wrapper {
+		.slider__silde-info {
+			.slide__index {
+				font-size: 7rem;
+			}
+			.slide__text--title {
+				transform: translateX(-60%);
+				font-size: 5rem;
+			}
+		}
+	}
+
+	.frame {
+		&__artist {
+			display: none;
 		}
 	}
 }
