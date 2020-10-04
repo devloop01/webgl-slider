@@ -131,7 +131,6 @@ export default class Slideshow {
 				.timeline({
 					defaults: { duration: 1, ease: "power4.inOut" },
 					onStart: () => {
-						console.log("start");
 						this.isAnimating = true;
 						if (clicked) {
 							this.GlSlider.scaleImage("up");
@@ -143,7 +142,6 @@ export default class Slideshow {
 					},
 					onComplete: () => {
 						this.isAnimating = false;
-						console.log("complete");
 					},
 				})
 				.addLabel("start", clicked ? 0 : 0.2);
