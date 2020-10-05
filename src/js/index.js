@@ -11,7 +11,7 @@ import { preloadImages } from "./utils";
 
 Splitting();
 
-const bgColors = ["#1f1322", "#27172e", "#454d53", "#2d1f2d"];
+const bgColors = ["#27172e", "#1f1322", "#454d53", "#2d1f2d"];
 
 const masterTl = gsap.timeline();
 
