@@ -12,6 +12,8 @@
 
 	--image-width: 450px;
 	--image-height: 600px;
+
+	--bg-color: #27172e;
 }
 
 * {
@@ -28,7 +30,7 @@ body {
 }
 
 body {
-	background: #1f1322;
+	background: var(--bg-color);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
